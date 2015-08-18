@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(articles_params)
+    @article = Article.new(article_params)
     @article.save
 
     flash.notice = "Article '#{@article.title}' Created!"
@@ -44,6 +44,10 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' Deleted!"
 
     redirect_to articles_path
+  end
+
+  def tag_list=(tags_string)
+
   end
 
 end
